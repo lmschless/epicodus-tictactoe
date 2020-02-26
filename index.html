@@ -11,30 +11,32 @@
     <title>TicTacToe</title>
   </head>
   <body>
+    <h1 class="game--title">Tic Tac Toe</h1>
+
     <section id="displayBoard">
       <div id= headerDiv>
       </div>
       <div class='board'>
+        <div class="game--container hide">
+          <div id="0" class="cell"></div>
+          <div id="1" class="cell"></div>
+          <div id="2" class="cell"></div>
+          <div id="3" class="cell"></div>
+          <div id="4" class="cell"></div>
+          <div id="5" class="cell"></div>
+          <div id="6" class="cell"></div>
+          <div id="7" class="cell"></div>
+          <div id="8" class="cell"></div>
+
+        </div>
       </section>
     </div>
 
-    <h1 class="game--title">Tic Tac Toe</h1>
     <div class="show"><label for="">Choose X or O</label><input id="player"
         type="text"> <button id="start-game">Start Game</button>
     </div>
 
-    <div class="game--container hide">
-      <div id="0" class="cell"></div>
-      <div id="1" class="cell"></div>
-      <div id="2" class="cell"></div>
-      <div id="3" class="cell"></div>
-      <div id="4" class="cell"></div>
-      <div id="5" class="cell"></div>
-      <div id="6" class="cell"></div>
-      <div id="7" class="cell"></div>
-      <div id="8" class="cell"></div>
 
-    </div>
     <button class="game-restart">Restart Game</button>
 
     <h2 class="game--status"></h2>

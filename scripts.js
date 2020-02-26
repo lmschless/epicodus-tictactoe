@@ -6,20 +6,20 @@ class Player {
 }
 
 $(document).ready(function() {
-	$('.hide').hide();
+	$('#displayBoard').hide();
 	$('.game-restart').hide();
 	let board = [ '', '', '', '', '', '', '', '', '' ];
 	let player1;
 	let player2;
 	let gameOver = false;
 	$('#start-game').click(function(e) {
-		if (player1 !== '') {
-			player1 = $('#player').val().toUpperCase();
+		player1 = $('#player').val().toUpperCase();
+		if (player1 === '') {
+		} else {
 			startGame();
 		}
 
 		e.preventDefault();
-		$('.hide').show();
 	});
 	const playGame = () => {
 		$('.cell').each(function(el) {
@@ -54,6 +54,7 @@ $(document).ready(function() {
 	//   if(el == ''){
 
 	const startGame = () => {
+		$('#displayBoard').toggle();
 		$('.show').hide();
 		// player1 = prompt('Please choose X or O').toUpperCase();
 		if (player1 === 'X') {
