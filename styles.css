@@ -1,5 +1,6 @@
 html {
 	height: 100%;
+	background-color: grey;
 }
 body {
 	font-family: 'Odibee Sans';
@@ -18,7 +19,6 @@ h2 {
 
 .wrapper {
 	background-color: grey;
-	z-index: -1;
 }
 
 input {
