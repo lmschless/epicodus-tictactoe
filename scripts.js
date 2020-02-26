@@ -1,36 +1,58 @@
 $(document).ready(function() {
+	const board = [ '', '', '', '', '', '', '', '', '' ];
+	var player1;
+	var player2;
+	var gameOver = false;
+	$('#start-game').click(function(e) {
+		startGame();
+		$('#start-game').hide();
+		e.preventDefault();
+		$('.hide').show();
+	});
+	const playGame = () => {
+		$('.cell').each(function(el) {
+			$('#' + el).click(function() {
+				if (board[el] == '') {
+					$('#' + el).append(player1);
+					board[el] = player1;
+					console.log('player1 is ' + player1);
+					console.log('player2 is ' + player2);
+					checkPlayer1Win();
+					// checkPlayer2Win();
+					if (board.includes('')) {
+						if (gameOver == false) {
+							setTimeout(function() {
+								computerTurn();
+							}, 800);
+						}
+					}
+				}
+				console.log(board);
+			});
+		});
+	};
 	$('.game-restart').click(function(e) {
 		document.location.reload(true);
 	});
 	// $('cell').each(function(el){
 	//   if(el == ''){
-	var player1;
-	var player2;
-	var gameOver = false;
 
 	$('.hide').hide();
 	$('.game-restart').hide();
-	$('#start-game').click(function(e) {
-		$('#start-game').hide();
-		e.preventDefault();
-		$('.hide').show();
-		startGame();
-	});
 
-	startGame = function() {
+	const startGame = function() {
 		player1 = prompt('Please choose X or O').toUpperCase();
 		if (player1 === 'X') {
 			player2 = 'O';
 		} else {
 			player2 = 'X';
 		}
+		playGame();
 	};
 
 	var randomNo = function() {
 		return Math.floor(Math.random() * 8 + 1); //R&&om no generat|| from 1-8.
 	};
-
-	var board = [ '', '', '', '', '', '', '', '', '' ];
 
 	var computerTurn = function() {
 		var space = randomNo();
@@ -44,7 +66,7 @@ $(document).ready(function() {
 		checkPlayer2Win();
 	};
 
-	const checkPlayer1Win = function() {
+	const checkPlayer1Win = () => {
 		if (
 			(board[6] == player1 && board[7] == player1 && board[8] == player1) || // bottom row
 			(board[3] == player1 && board[4] == player1 && board[5] == player1) || // across the middle
@@ -79,28 +101,6 @@ $(document).ready(function() {
 			gameOver = true;
 		}
 	};
-
-	$('.cell').each(function(el) {
-		$('#' + el).click(function() {
-			console.log('click deteeted');
-			if (board[el] == '') {
-				$('#' + el).append(player1);
-				board[el] = player1;
-				console.log('player1 is ' + player1);
-				console.log('player2 is ' + player2);
-				checkPlayer1Win();
-				// checkPlayer2Win();
-				if (board.includes('')) {
-					if (gameOver == false) {
-						setTimeout(function() {
-							computerTurn();
-						}, 800);
-					}
-				}
-			}
-			console.log(board);
-		});
-	});
 });
 
 // playGame = () => {
