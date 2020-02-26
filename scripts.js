@@ -1,5 +1,7 @@
 $(document).ready(function() {
-	const board = [ '', '', '', '', '', '', '', '', '' ];
+	$('.hide').hide();
+	$('.game-restart').hide();
+	let board = [ '', '', '', '', '', '', '', '', '' ];
 	let player1;
 	let player2;
 	let gameOver = false;
@@ -23,7 +25,7 @@ $(document).ready(function() {
 						if (gameOver == false) {
 							setTimeout(function() {
 								computerTurn();
-							}, 800);
+							}, 500);
 						}
 					}
 				}
@@ -33,14 +35,17 @@ $(document).ready(function() {
 	};
 	$('.game-restart').click(function(e) {
 		document.location.reload(true);
+		// $('.cell').each(function(el) {
+		// 	div.innerText = '';
+		// });
+		// board = [ '', '', '', '', '', '', '', '', '' ];
+		// gameOver = false;
+		// startGame();
 	});
 	// $('cell').each(function(el){
 	//   if(el == ''){
 
-	$('.hide').hide();
-	$('.game-restart').hide();
-
-	const startGame = function() {
+	const startGame = () => {
 		player1 = prompt('Please choose X or O').toUpperCase();
 		if (player1 === 'X') {
 			player2 = 'O';
@@ -54,13 +59,13 @@ $(document).ready(function() {
 		return Math.floor(Math.random() * 8 + 1); //R&&om no generat|| from 1-8.
 	};
 
-	var computerTurn = () => {
-		var space = randomNo();
+	const computerTurn = () => {
+		let space = randomNo();
 		while (board[space] !== '') {
 			space = randomNo();
 			console.log(`Inside while board is ${board[space]} and random number is ${space}`);
 		}
-		console.log('space is ' + space);
+		console.log(`space is ${space}`);
 		$('#' + space).append(player2);
 		board[space] = player2;
 		checkPlayer2Win();
@@ -75,10 +80,8 @@ $(document).ready(function() {
 			(board[1] == player1 && board[4] == player1 && board[7] == player1) || // down the middle
 			(board[2] == player1 && board[5] == player1 && board[8] == player1) || // down the right side
 			(board[0] == player1 && board[4] == player1 && board[8] == player1) || // diagonal
-			(board[6] == player1 && board[4] == player1 && board[2] == player1)
+			(board[6] == player1 && board[4] == player1 && board[2] == player1) // bottom row
 		) {
-			// bottom row
-
 			console.log('Player1 You have won!');
 			$('.game-restart').show();
 			gameOver = true;
