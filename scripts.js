@@ -93,7 +93,7 @@ $(document).ready(function() {
 			(board[0] == player1 && board[4] == player1 && board[8] == player1) || // diagonal
 			(board[6] == player1 && board[4] == player1 && board[2] == player1) // bottom row
 		) {
-			console.log('Player1 You have won!');
+			$('.outcome').append(`${player1} has won!`);
 			$('.game-restart').show();
 			$('.cell').unbind('click');
 			gameOver = true;
@@ -111,7 +111,7 @@ $(document).ready(function() {
 			(board[0] == player2 && board[4] == player2 && board[8] == player2) || // diagonal
 			(board[6] == player2 && board[4] == player2 && board[2] == player2)
 		) {
-			console.log('Player 2 You have won!');
+			$('.outcome').append(`${player2} has won!`);
 			$('.game-restart').show();
 			$('.cell').unbind('click');
 

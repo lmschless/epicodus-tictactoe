@@ -1,11 +1,12 @@
 body {
-	font-family: "Arial", sans-serif;
+	font-family: 'Odibee Sans';
 }
 section {
 	text-align: center;
 }
 h1,
-.intro {
+.intro,
+h2 {
 	align-items: center;
 	text-align: center;
 }
@@ -21,7 +22,7 @@ input {
 	margin: 50px auto;
 }
 .cell {
-	font-family: "Permanent Marker", cursive;
+	font-family: 'Odibee Sans';
 	width: 100px;
 	height: 100px;
 	box-shadow: 0 0 0 1px #333333;
