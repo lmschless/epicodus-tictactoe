@@ -10,9 +10,14 @@ section {
 	text-align: center;
 }
 h1,
-.intro,
-h2 {
+.intro {
 	margin-top: 8vh;
+	align-items: center;
+	text-align: center;
+	align
+}
+
+.outcome {
 	align-items: center;
 	text-align: center;
 }
@@ -22,7 +27,7 @@ h2 {
 }
 
 input {
-	width: 2rem;
+	width: 2.5rem;
 	height: 2.5rem;
 }
 
