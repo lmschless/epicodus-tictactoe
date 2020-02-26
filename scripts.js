@@ -12,15 +12,15 @@ $(document).ready(function() {
 	let player1;
 	let player2;
 	let gameOver = false;
+
 	$('#start-game').click(function(e) {
 		player1 = $('#player').val().toUpperCase();
-		if (player1 === '') {
-		} else {
+		if (player1 === 'X' || player1 === 'O') {
 			startGame();
 		}
-
 		e.preventDefault();
 	});
+
 	const playGame = () => {
 		$('.cell').each(function(el) {
 			$('#' + el).click(function() {
@@ -41,6 +41,7 @@ $(document).ready(function() {
 			});
 		});
 	};
+
 	$('.game-restart').click(function(e) {
 		document.location.reload(true);
 		// $('.cell').each(function(el) {
@@ -55,7 +56,7 @@ $(document).ready(function() {
 
 	const startGame = () => {
 		$('#displayBoard').toggle();
-		$('.show').hide();
+		$('.intro').hide();
 		// player1 = prompt('Please choose X or O').toUpperCase();
 		if (player1 === 'X') {
 			player2 = 'O';
