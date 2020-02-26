@@ -1,3 +1,10 @@
+class Player {
+	constructor(name, marker) {
+		this.name = name;
+		this.marker = marker;
+	}
+}
+
 $(document).ready(function() {
 	$('.hide').hide();
 	$('.game-restart').hide();
@@ -21,12 +28,10 @@ $(document).ready(function() {
 					console.log('player2 is ' + player2);
 					checkPlayer1Win();
 					// checkPlayer2Win();
-					if (board.includes('')) {
-						if (gameOver == false) {
-							setTimeout(function() {
-								computerTurn();
-							}, 500);
-						}
+					if (board.includes('') && gameOver == false) {
+						setTimeout(function() {
+							computerTurn();
+						}, 500);
 					}
 				}
 				console.log(board);
