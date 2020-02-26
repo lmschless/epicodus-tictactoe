@@ -13,9 +13,11 @@ $(document).ready(function() {
 	let player2;
 	let gameOver = false;
 	$('#start-game').click(function(e) {
-		player1 = $('#player').val().toUpperCase();
-		startGame();
-		$('#start-game').hide();
+		if (player1 !== '') {
+			player1 = $('#player').val().toUpperCase();
+			startGame();
+		}
+
 		e.preventDefault();
 		$('.hide').show();
 	});
@@ -52,6 +54,7 @@ $(document).ready(function() {
 	//   if(el == ''){
 
 	const startGame = () => {
+		$('.show').hide();
 		// player1 = prompt('Please choose X or O').toUpperCase();
 		if (player1 === 'X') {
 			player2 = 'O';
@@ -90,6 +93,7 @@ $(document).ready(function() {
 		) {
 			console.log('Player1 You have won!');
 			$('.game-restart').show();
+			$('.cell').unbind('click');
 			gameOver = true;
 		}
 	};
@@ -107,6 +111,8 @@ $(document).ready(function() {
 		) {
 			console.log('Player 2 You have won!');
 			$('.game-restart').show();
+			$('.cell').unbind('click');
+
 			gameOver = true;
 		}
 	};
