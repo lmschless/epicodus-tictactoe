@@ -13,6 +13,7 @@ $(document).ready(function() {
 	let player2;
 	let gameOver = false;
 	$('#start-game').click(function(e) {
+		player1 = $('#player').val().toUpperCase();
 		startGame();
 		$('#start-game').hide();
 		e.preventDefault();
@@ -51,7 +52,7 @@ $(document).ready(function() {
 	//   if(el == ''){
 
 	const startGame = () => {
-		player1 = prompt('Please choose X or O').toUpperCase();
+		// player1 = prompt('Please choose X or O').toUpperCase();
 		if (player1 === 'X') {
 			player2 = 'O';
 		} else {
