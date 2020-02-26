@@ -1,8 +1,8 @@
 $(document).ready(function() {
 	const board = [ '', '', '', '', '', '', '', '', '' ];
-	var player1;
-	var player2;
-	var gameOver = false;
+	let player1;
+	let player2;
+	let gameOver = false;
 	$('#start-game').click(function(e) {
 		startGame();
 		$('#start-game').hide();
@@ -50,11 +50,11 @@ $(document).ready(function() {
 		playGame();
 	};
 
-	var randomNo = function() {
+	const randomNo = () => {
 		return Math.floor(Math.random() * 8 + 1); //R&&om no generat|| from 1-8.
 	};
 
-	var computerTurn = function() {
+	var computerTurn = () => {
 		var space = randomNo();
 		while (board[space] !== '') {
 			space = randomNo();
@@ -85,7 +85,7 @@ $(document).ready(function() {
 		}
 	};
 
-	const checkPlayer2Win = function() {
+	const checkPlayer2Win = () => {
 		if (
 			(board[6] == player2 && board[7] == player2 && board[8] == player2) || // bottom row
 			(board[3] == player2 && board[4] == player2 && board[5] == player2) || // across the middle
