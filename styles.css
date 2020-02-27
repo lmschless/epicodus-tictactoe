@@ -85,6 +85,8 @@ input {
 		font-size: 85px;
 		align-items: center;
 		text-align: center;
+		/* !!!This line is required for touch to work on mobile!!! */
+		cursor: pointer;
 	}
 	.board {
 		display: grid;
