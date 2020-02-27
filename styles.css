@@ -1,6 +1,6 @@
 html {
 	height: 100%;
-	background-color: grey;
+	background-color: #ffda96;
 }
 body {
 	font-family: 'Odibee Sans';
@@ -27,7 +27,7 @@ h1,
 }
 
 .wrapper {
-	background-color: grey;
+	background-color: #ffda96;
 }
 
 input {
@@ -44,7 +44,7 @@ input {
 	display: grid;
 	grid-template-columns: repeat(3, auto);
 	width: 306px;
-	margin: 50px auto;
+	margin: 35px auto;
 }
 .cell {
 	font-family: 'Odibee Sans';
@@ -75,7 +75,7 @@ input {
 	.game--container {
 		display: grid;
 		grid-template-columns: repeat(3, auto);
-		margin: 25px auto;
+		margin: 20px auto;
 	}
 
 	input {
