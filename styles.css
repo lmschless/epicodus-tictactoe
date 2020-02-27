@@ -54,7 +54,7 @@ input {
 	text-align: center;
 }
 
-@media screen and (max-width: 699px) {
+@media screen and (max-width: 799px) {
 	html {
 		overflow: hidden;
 	}
