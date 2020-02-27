@@ -53,3 +53,41 @@ input {
 	align-items: center;
 	text-align: center;
 }
+
+@media screen and (max-width: 699px) {
+	html {
+		overflow: hidden;
+	}
+
+	body,
+	h1 {
+		margin-top: 8vh;
+		align-items: center;
+		text-align: center;
+		font-size: 4rem;
+	}
+
+	.game--container {
+		display: grid;
+		grid-template-columns: repeat(3, auto);
+		margin: 50px auto;
+	}
+
+	.cell {
+		width: 150px;
+		height: 150px;
+		line-height: 100px;
+		font-size: 100px;
+		align-items: center;
+		text-align: center;
+	}
+	.board {
+		display: grid;
+		align-items: center;
+		text-align: center;
+	}
+	.wrapper {
+		align-items: center;
+		text-align: center;
+	}
+}

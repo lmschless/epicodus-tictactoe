@@ -15,7 +15,6 @@ $(document).ready(function() {
 
 	const checkTie = () => {
 		if (!board.includes('') && gameOver === false) {
-			console.log('its a tie!');
 			gameOver = true;
 			$('.outcome').append(`The game is a tie!`);
 			$('.game-restart').show();
@@ -118,12 +117,9 @@ $(document).ready(function() {
 			(board[0] == player2 && board[4] == player2 && board[8] == player2) || // diagonal
 			(board[6] == player2 && board[4] == player2 && board[2] == player2)
 		) {
-			// const checkPlayer2Win = () => {
-
 			$('.outcome').append(`${player2} has won!`);
 			$('.game-restart').show();
 			$('.cell').unbind('click');
-
 			gameOver = true;
 		}
 	};
