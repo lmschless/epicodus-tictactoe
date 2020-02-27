@@ -79,8 +79,8 @@ input {
 	}
 
 	.cell {
-		width: 7rem;
-		height: 120px;
+		width: 100px;
+		height: 100px;
 		line-height: 100px;
 		font-size: 85px;
 		align-items: center;
