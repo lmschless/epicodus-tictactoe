@@ -22,6 +22,16 @@ $(document).ready(function() {
 		}
 	};
 
+	$('#player').keypress(function(e) {
+		if (event.keyCode === 13) {
+			player1 = $('#player').val().toUpperCase();
+			if (player1 === 'X' || player1 === 'O') {
+				startGame();
+			}
+			e.preventDefault();
+		}
+	});
+
 	$('#start-game').click(function(e) {
 		player1 = $('#player').val().toUpperCase();
 		if (player1 === 'X' || player1 === 'O') {
