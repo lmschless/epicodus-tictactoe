@@ -70,7 +70,7 @@ input {
 	.game--container {
 		display: grid;
 		grid-template-columns: repeat(3, auto);
-		margin: 50px auto;
+		margin: 2px auto;
 	}
 
 	input {
@@ -79,7 +79,7 @@ input {
 	}
 
 	.cell {
-		width: 110px;
+		width: 7rem;
 		height: 120px;
 		line-height: 100px;
 		font-size: 85px;
