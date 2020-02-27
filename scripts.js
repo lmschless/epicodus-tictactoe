@@ -13,6 +13,16 @@ $(document).ready(function() {
 	let player2;
 	let gameOver = false;
 
+	const checkTie = () => {
+		if (!board.includes('') && gameOver === false) {
+			console.log('its a tie!');
+			gameOver = true;
+			$('.outcome').append(`The game is a tie!`);
+			$('.game-restart').show();
+			$('.cell').unbind('click');
+		}
+	};
+
 	$('#start-game').click(function(e) {
 		player1 = $('#player').val().toUpperCase();
 		if (player1 === 'X' || player1 === 'O') {
@@ -29,7 +39,8 @@ $(document).ready(function() {
 					board[el] = player1;
 					console.log('player1 is ' + player1);
 					console.log('player2 is ' + player2);
-					checkPlayer1Win();
+					checkWin();
+					checkTie();
 					// checkPlayer2Win();
 					if (board.includes('') && gameOver == false) {
 						setTimeout(function() {
@@ -74,15 +85,15 @@ $(document).ready(function() {
 		let space = randomNo();
 		while (board[space] !== '') {
 			space = randomNo();
-			console.log(`Inside while board is ${board[space]} and random number is ${space}`);
 		}
 		console.log(`space is ${space}`);
 		$('#' + space).append(player2);
 		board[space] = player2;
-		checkPlayer2Win();
+		checkWin();
+		checkTie();
 	};
 
-	const checkPlayer1Win = () => {
+	const checkWin = () => {
 		if (
 			(board[6] == player1 && board[7] == player1 && board[8] == player1) || // bottom row
 			(board[3] == player1 && board[4] == player1 && board[5] == player1) || // across the middle
@@ -97,11 +108,7 @@ $(document).ready(function() {
 			$('.game-restart').show();
 			$('.cell').unbind('click');
 			gameOver = true;
-		}
-	};
-
-	const checkPlayer2Win = () => {
-		if (
+		} else if (
 			(board[6] == player2 && board[7] == player2 && board[8] == player2) || // bottom row
 			(board[3] == player2 && board[4] == player2 && board[5] == player2) || // across the middle
 			(board[0] == player2 && board[1] == player2 && board[2] == player2) || // across the bottom
@@ -111,6 +118,8 @@ $(document).ready(function() {
 			(board[0] == player2 && board[4] == player2 && board[8] == player2) || // diagonal
 			(board[6] == player2 && board[4] == player2 && board[2] == player2)
 		) {
+			// const checkPlayer2Win = () => {
+
 			$('.outcome').append(`${player2} has won!`);
 			$('.game-restart').show();
 			$('.cell').unbind('click');
